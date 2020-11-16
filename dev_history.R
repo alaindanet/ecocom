@@ -10,12 +10,20 @@ usethis::use_vignette("aa-moments")
 
 usethis::use_pipe()
 
-# build package 
-attachment::att_to_description()
-devtools::check()
-devtools::install()
 
 # CI
 usethis::use_travis()
 usethis::use_github_action_check_standard()
 usethis::use_github_action("pkgdown")
+
+# use pkgdown
+pkgdown::build_site()
+usethis::use_git_ignore("docs")
+usethis::use_git_ignore("inst/docs")
+
+# build package 
+attachment::att_to_description()
+devtools::check()
+devtools::install()
+devtools::build_readme()
+pkgdown::build_site()
