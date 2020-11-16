@@ -1,0 +1,25 @@
+Package: ecocom
+Title: Provides Tools for Analysis of Ecological Communities
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Alain",
+           family = "Danet",
+           role = c("aut", "cre"),
+           email = "alain.danet@caramail.fr",
+           comment = c(ORCID = "0000-0002-1592-9483"))
+Description: ecocom provides functions to computes
+    plant-plant interactions and the first four moments of trait community
+    distribution.
+License: GPL-3
+Suggests: 
+    knitr,
+    moments,
+    rmarkdown,
+    testthat
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+Imports: 
+    magrittr

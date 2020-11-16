@@ -1,0 +1,43 @@
+---
+title: "moments"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{aa-moments}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ecocom)
+```
+
+# Weight
+
+```{r}
+abun <- rpois(n = 10, lambda = 3)
+
+scaled <- scale_weight(abun)
+
+c(base = sum(abun), scaled = scaled)
+```
+
+
+# Compute moment of trait distributions
+
+```{r}
+#vector of species abundance
+abun <- rpois(n = 10, lambda = 3)
+# vector of species trait
+trait <- rnorm(n = 10, mean = 10, sd = 3)
+
+calc_cw_moments(trait = trait, weight = abun)
+```
+
+
