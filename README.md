@@ -28,6 +28,8 @@ devtools::install_github("alaindanet/ecocom")
 
 This is a basic example which shows you how to solve a common problem:
 
+### Compute moments of a trait distribution
+
 ``` r
 library(ecocom)
 ## basic example code
@@ -40,5 +42,16 @@ trait <- rnorm(n = 10, mean = 10, sd = 3)
 # Compute the moments of trait distribution
 calc_cw_moments(trait = trait, weight = abun)
 #>       mean   variance   skewness   kurtosis 
-#> 10.3806957  6.5003318  0.5312293  1.8120433
+#> 10.6483773 23.0843062  0.0672937  2.9857581
+```
+
+### Compute plant-plant interaction index
+
+The `n_int_a` and `n_int_c` compute the neighbor-effect respectively
+with additive and commutative symmetry according to [Diaz-Sierra et al.
+(2016)](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12706).
+
+``` r
+n_int_a(without = 0, with_nbs = 1)
+#> [1] 2
 ```

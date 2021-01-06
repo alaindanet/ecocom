@@ -32,6 +32,10 @@ calc_cw_moments(trait = NULL, weight = NULL)
 \item{trait}{numeric vector of trait values}
 
 \item{weight}{numeric vector of relative abundance or biomass}
+
+\item{cw_mean}{output from calc_cw_mean}
+
+\item{cw_variance}{output from calc_cw_variance}
 }
 \value{
 a numeric vector

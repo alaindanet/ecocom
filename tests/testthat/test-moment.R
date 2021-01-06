@@ -1,3 +1,4 @@
+set.seed(123)
 
 normal <- rnorm(n= 2000, mean = 0, sd = 1)
 test_that("normal works", {
@@ -28,9 +29,9 @@ test_that("exponential works", {
 })
 
 
-trait <- seq(1,3)
-fq_eq <- rep(1, 3) %>% {. / sum(.)}
-fq_uneq <- c(1, 3, 1) %>% {. / sum(.)}
-calc_cw_moments(trait = trait, weight = fq_eq)
-calc_cw_moments(trait = trait, weight = fq_uneq)
-out <- round(out)
+#trait <- seq(1,3)
+#fq_eq <- rep(1, 3) %>% {. / sum(.)}
+#fq_uneq <- c(1, 3, 1) %>% {. / sum(.)}
+#calc_cw_moments(trait = trait, weight = fq_eq)
+#calc_cw_moments(trait = trait, weight = fq_uneq)
+#out <- round(out)

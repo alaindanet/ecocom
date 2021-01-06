@@ -11,6 +11,8 @@ Description: ecocom provides functions to computes
     plant-plant interactions and the first four moments of trait community
     distribution.
 License: GPL-3
+Imports: 
+    magrittr
 Suggests: 
     knitr,
     moments,
@@ -20,6 +22,4 @@ VignetteBuilder:
     knitr
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
-Imports: 
-    magrittr
+RoxygenNote: 7.1.1

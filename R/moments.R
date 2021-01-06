@@ -1,6 +1,8 @@
 #' Calculate moments of trait distribution
 #' 
 #' @param trait numeric vector of trait values
+#' @param cw_mean output from calc_cw_mean
+#' @param cw_variance output from calc_cw_variance
 #' @inheritParams scale_weight
 #' @return a numeric vector
 #' @export
@@ -11,7 +13,6 @@
 #' trait <- rnorm(n = 10, mean = 10, sd = 3)
 #' 
 #' calc_cw_moments(trait = trait, weight = abun)
-
 calc_cw_mean <- function (trait = NULL, weight = NULL) {
   sum(trait * scale_weight(weight))
 }
