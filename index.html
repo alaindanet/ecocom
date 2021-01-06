@@ -41,7 +41,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -91,6 +91,9 @@
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>This is a basic example which shows you how to solve a common problem:</p>
+<div id="compute-moments-of-a-trait-distribution" class="section level3">
+<h3 class="hasAnchor">
+<a href="#compute-moments-of-a-trait-distribution" class="anchor"></a>Compute moments of a trait distribution</h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">ecocom</span><span class="op">)</span>
 <span class="co">## basic example code</span>
@@ -103,7 +106,16 @@
 <span class="co"># Compute the moments of trait distribution</span>
 <span class="fu"><a href="reference/calc_cw_mean.html">calc_cw_moments</a></span><span class="op">(</span>trait <span class="op">=</span> <span class="va">trait</span>, weight <span class="op">=</span> <span class="va">abun</span><span class="op">)</span>
 <span class="co">#&gt;       mean   variance   skewness   kurtosis </span>
-<span class="co">#&gt; 10.3806957  6.5003318  0.5312293  1.8120433</span></code></pre></div>
+<span class="co">#&gt; 10.6483773 23.0843062  0.0672937  2.9857581</span></code></pre></div>
+</div>
+<div id="compute-plant-plant-interaction-index" class="section level3">
+<h3 class="hasAnchor">
+<a href="#compute-plant-plant-interaction-index" class="anchor"></a>Compute plant-plant interaction index</h3>
+<p>The <code>n_int_a</code> and <code>n_int_c</code> compute the neighbor-effect respectively with additive and commutative symmetry according to <a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12706">Diaz-Sierra et al. (2016)</a>.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/n_int_a.html">n_int_a</a></span><span class="op">(</span>without <span class="op">=</span> <span class="fl">0</span>, with_nbs <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+<span class="co">#&gt; [1] 2</span></code></pre></div>
+</div>
 </div>
 </div>
   </div>
