@@ -22,7 +22,7 @@ usethis::use_git_ignore("docs")
 usethis::use_git_ignore("inst/docs")
 
 # build package 
-attachment::att_to_description()
+attachment::att_amend_desc()
 devtools::check()
 devtools::install()
 devtools::build_readme()

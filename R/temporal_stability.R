@@ -23,6 +23,7 @@ compute_cv_com <- function(synchrony, cv_sp) {
   sqrt(synchrony) * cv_sp
 }
 
+
 compute_synchrony <- function(cov_mat) {
   com_var <- sum(cov_mat)
   var_intra_sp <- sum(sqrt(diag(cov_mat)))
@@ -30,6 +31,27 @@ compute_synchrony <- function(cov_mat) {
   return(phi)
 }
 
+#' Community stability decomposition
+#'
+#' @param mat a time x species matrix containing abundances, or biomasses,
+#' etc...
+#'
+#' @details Add the paper references
+#'
+#' @export
+community_stability <- function(mat) {
+
+  bm_sp <- colMeans(mat)
+  bm_tot <- sum(bm_sp)
+
+  cov_mat <- cov(mat)
+  var_tot <- sum(cov_mat)
+
+  bm_tot / sqrt(var_tot)
+}
+
+#' @rdname community_stability
+#' @export
 statistical_averaging_effect <- function(mat) {
 
   var_sp <- apply(mat, 2, var)
@@ -46,6 +68,8 @@ statistical_averaging_effect <- function(mat) {
   )
 }
 
+#' @rdname community_stability
+#' @export
 compensatory_effect <- function(mat) {
   cov_mat <- cov(mat)
   var_sp <- diag(cov_mat)
@@ -53,6 +77,8 @@ compensatory_effect <- function(mat) {
   sqrt(sum(var_sp)) / sqrt(var_tot)
 }
 
+#' @rdname community_stability
+#' @export
 asynchrony <- function(mat) {
 
   cov_mat <- cov(mat)
@@ -62,6 +88,8 @@ asynchrony <- function(mat) {
   sum(sqrt(var_sp)) / sqrt(var_tot)
 }
 
+#' @rdname community_stability
+#' @export
 population_stability <- function(mat) {
 
   bm_sp <- colMeans(mat)
@@ -70,15 +98,4 @@ population_stability <- function(mat) {
   sd_sp <- apply(mat, 2, sd)
 
   bm_tot / sum(sd_sp)
-}
-
-community_stability <- function(mat) {
-
-  bm_sp <- colMeans(mat)
-  bm_tot <- sum(bm_sp)
-
-  cov_mat <- cov(mat)
-  var_tot <- sum(cov_mat)
-
-  bm_tot / sqrt(var_tot)
 }
